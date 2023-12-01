@@ -1,15 +1,21 @@
-* 어플리케이션 실행 방법
+On the command line
 
-lnmp2$ sudo docker-compose up
+This is the quickest way
 
+# Launch a 20.04 based image with PHP 8
+docker run -p "80:80" -v ${PWD}/app:/app mattrayner/lamp:latest-2004-php8
 
-* 어플리케이션 세부 정보
-- nginx 버전은 1.10을 사용했다. 왜냐하면 1.17.7 이전 버전까지 HTTP request smuggling 취약점이 존재하여 실험 환경을 동일하게 구성하기 위함이다.
+# Launch a 20.04 based image with PHP 7
+docker run -p "80:80" -v ${PWD}/app:/app mattrayner/lamp:latest-2004-php7
 
-(출처)
-https://nvd.nist.gov/vuln/detail/CVE-2019-20372
+# Launch a 18.04 based image with PHP 8
+docker run -p "80:80" -v ${PWD}/app:/app mattrayner/lamp:latest-1804-php8
 
-- mysql은 5.7 버전을 사용했다.
+# Launch a 18.04 based image with PHP 7
+docker run -p "80:80" -v ${PWD}/app:/app mattrayner/lamp:latest-1804-php7
 
-- php 5.6 버전을 사용했다.
+# Launch a 16.04 based image with PHP 7
+docker run -p "80:80" -v ${PWD}/app:/app mattrayner/lamp:latest-1604
 
+# Launch a 14.04 based image with PHP 5
+docker run -p "80:80" -v ${PWD}/app:/app mattrayner/lamp:latest-1404
